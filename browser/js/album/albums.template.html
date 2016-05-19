@@ -1,0 +1,19 @@
+<div ng-controller="AlbumsCtrl">
+  <h3>Albums</h3>
+  <div class="row">
+    <div class="col-xs-4" ng-repeat="album in albums">
+      <a class="thumbnail" ui-sref="album({ id: album.id })">
+        <img ng-src="{{ album.imageUrl }}">
+        <div class="caption">
+          <h5>
+            <span>{{ album.name }}</span>
+          </h5>
+          <!-- Perhaps our albums state should have a controller that refers to AlbumFactory so we can do 
+          {{ AlbumFactory.fetchById(album.id).songs }}
+          -->
+          <small>{{ album.songs.length }} songs</small>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
