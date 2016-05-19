@@ -1,4 +1,4 @@
-juke.config(function ($stateProvider) {
+juke.config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider.state('albumList', {
     url: '/albums',
     templateUrl: '/js/album/albums.template.html',
@@ -20,4 +20,6 @@ juke.config(function ($stateProvider) {
     },
     controller: 'AlbumCtrl'
   });
+
+  $urlRouterProvider.when('', '/albums');
 });

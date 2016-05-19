@@ -1,4 +1,7 @@
-juke.config(function ($stateProvider) {
+juke.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+  $locationProvider.html5Mode(true);
+  $urlRouterProvider.when('/artists/:id', '/artists/:id/albums')
+
   $stateProvider.state('artistList', {
     url: '/artists',
     templateUrl: '/js/artist/artists.template.html',
@@ -27,5 +30,7 @@ juke.config(function ($stateProvider) {
   .state('artist.songs', {
     url: '/songs',
     templateUrl: '/js/artist/artist.songs.template.html'
-  })
+  });
+
+
 });
