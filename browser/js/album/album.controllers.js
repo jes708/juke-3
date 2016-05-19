@@ -37,7 +37,7 @@ juke.controller('AlbumCtrl', function ($scope, $log, PlayerFactory, AlbumFactory
 
 /* ALBUMS (PLURAL) CONTROLLER */
 
-juke.controller('AlbumsCtrl', function ($scope, $log, $rootScope, PlayerFactory, AlbumFactory) {
+juke.controller('AlbumsCtrl', function ($scope, $log, PlayerFactory, AlbumFactory) {
 
   $scope.showMe = true;
 
@@ -46,7 +46,7 @@ juke.controller('AlbumsCtrl', function ($scope, $log, $rootScope, PlayerFactory,
   });
 
   $scope.viewOneAlbum = function (album) {
-    $rootScope.$broadcast('viewSwap', { name: 'oneAlbum', id: album.id });
+    // $rootScope.$broadcast('viewSwap', { name: 'oneAlbum', id: album.id });
   };
 
   AlbumFactory.fetchAll()
